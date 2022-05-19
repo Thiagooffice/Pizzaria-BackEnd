@@ -1,7 +1,7 @@
 import crypto from 'crypto'
 import multer from "multer";
 
-import {extname, resolve} from 'path'
+import { dirname ,resolve} from 'path'
 
 export default{
     upload(folder: string){

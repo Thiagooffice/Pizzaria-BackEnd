@@ -7,6 +7,7 @@ import {DetailUserController} from './controllers/user/DetailUserController'
 import {CreateCategoryController} from './controllers/category/CreateCategoryController'
 import {ListCategoryController} from './controllers/category/ListCategryController'
 import {CreateProductController} from './controllers/product/CreateProductController'
+import {ListByCategoryController} from './controllers/product/ListByCategoryController'
 
 import {isAuthenticated} from './meddlewares/isAuthenticated'
 
@@ -30,5 +31,7 @@ router.get('/category', isAuthenticated, new ListCategoryController().handle)
 
 //--rotas product
 router.post('/product', isAuthenticated, upload.single('file') , new CreateProductController().handle)
+
+router.get('/category/product', isAuthenticated, new ListByCategoryController().handle)
 
 export { router }; 
