@@ -13,6 +13,7 @@ import { RemoveOrderController } from './controllers/order/RemoveOrderController
 import { AddItemController } from './controllers/order/AddItemController';
 import { RemoveItemController } from './controllers/order/RemoveItemController';
 import { SendOrderController } from './controllers/order/SendOrderController';
+import { ListOrdersController } from './controllers/ListOrdersService';
 
 import {isAuthenticated} from './meddlewares/isAuthenticated'
 
@@ -49,6 +50,8 @@ router.post('/order/add', isAuthenticated, new AddItemController().handle)
 router.delete('/order/remove', isAuthenticated, new RemoveItemController().handle)
 
 router.put('/order/send', isAuthenticated, new SendOrderController().handle)
+
+router.get('/orders', isAuthenticated, new ListOrdersController().handle)
 
 
 export { router }; 
